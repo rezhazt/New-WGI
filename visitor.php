@@ -81,38 +81,31 @@
                         <div class="card-panel">
                             <h5 class="center" style="margin-bottom: 50px;">FORMULIR TAMU & PELAMAR</h5>
                             <div class="input-field">
-                                <input type="text" name="no_id" require>
+                                <input style="height: 60px;" type="text" name="no_id" require>
                                 <label for="no_id">No. KTP/KITAS/PASSPORT</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" name="name" require>
+                                <input style="height: 60px;" type="text" name="name" require>
                                 <label for="name">Nama sesuai KTP (Huruf Besar)</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" name="phone"  require>
+                                <input style="height: 60px;" type="text" name="phone"  require>
                                 <label for="phone">No. Telepon aktif whatsapp</label>
                             </div>
                             <div class="input-field">
-                                <input type="email" name="email" require class="validate">
+                                <input style="height: 60px;" type="email" name="email" require class="validate">
                                 <label for="email">Email pribadi & aktif</label>
                             </div>
                             <div class="input-field">
-                                <input type="date" name="visit_date" require>
+                                <input style="height: 60px;" type="date" name="visit_date" require>
                                 <label for="visit_date">Tanggal kedatangan</label>
                             </div>
                             <div class="input-field">
-                                <textarea type="text" name="tujuan" class="materialize-textarea"></textarea>
+                                <textarea style="height: 60px;" type="text" name="tujuan" class="materialize-textarea"></textarea>
                                 <label for="tujuan">Keperluan</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn" name="submit">Kirim</button>
-                    </form>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col m12 12">
-                    <form>
                         <div class="card-panel">
                             <p>1. Apakah anda sedang/pernah mengalami demam/batuk/pilek/sakit tenggorokan/sesak nafas dalam 14 hari terakhir ?</p>
                                 <label>
@@ -201,6 +194,8 @@
                                     <span>No</span>
                                 </label>
                         </div>
+                        
+                        <button type="submit" class="btn" name="submit">Kirim</button>
                     </form>
                 </div>
             </div>
