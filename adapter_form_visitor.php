@@ -14,7 +14,7 @@
     $hasil = mysqli_query($kon,$sql);
 
     if($hasil){
-        echo "Berhasil";
+        include "print.php";
         exit;
     } else {
         echo "Gagal koneksi";
