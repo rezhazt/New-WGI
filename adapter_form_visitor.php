@@ -1,23 +1,39 @@
 <?php
-    include 'connection.php';
+//Include file koneksi ke database
+include "connection.php";
 
-    $no_id = $_POST["no_id"];
-    $name = $_POST["name"];
-    $phone=$_POST["phone"];
-    $email=$_POST["email"];
-    $visit_date=$_POST["visit_date"];
-    $tujuan=$_POST["tujuan"];
-    $covid_form=$_POST['covid_form'];
+//menerima nilai dari kiriman form input-barang 
+$idCard=$_POST["idCard"];
+$fullname=$_POST["fullname"];
+$wa=$_POST["wa"];
+$email=$_POST["email"];
+$visitDate=$_POST["visitDate"];
+$tujuan=$_POST["tujuan"];
+$test1=$_POST["test1"];
+$test2=$_POST["test2"];
+$test3=$_POST["test3"];
+$test4=$_POST["test4"];
+$test5=$_POST["test5"];
+$test6=$_POST["test6"];
+$test7=$_POST["test7"];
+$test8=$_POST["test8"];
 
-    $sql = "insert into tabel_visitor (no_id,name,phone,email,visit_date,tujuan,covid_form) values ('$no_id','$name','$phone','$email','$visit_date','$tujuan','$covid_form')";
+//Query input menginput data kedalam tabel barang
+  $sql="insert into tabel_visit (idCard,fullname,wa,email,visitDate,tujuan,test1,test2,test3,test4,test5,test6,test7,test8) values
+		('$idCard','$fullname','$wa','$email','$visitDate','$tujuan','$test1','$test2','$test3','$test4','$test5','$test6','$test7','$test8')";
 
-    $hasil = mysqli_query($kon,$sql);
+//Mengeksekusi/menjalankan query diatas	
+  $hasil=mysqli_query($kon,$sql);
+ 
 
-    if($hasil){
-        include "print.php";
-        exit;
-    } else {
-        echo "Gagal koneksi";
-        exit;
-    }
+//Kondisi apakah berhasil atau tidak
+  if ($hasil) {
+	echo "sukses";
+	exit;
+  }
+else {
+	echo "Gagal insert data";
+	exit;
+}  
+
 ?>
