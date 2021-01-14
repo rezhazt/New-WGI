@@ -34,6 +34,4 @@ $test8=$_POST["test8"];
 else {
 	echo "Gagal insert data";
 	exit;
-}  
-
-?>
+}
