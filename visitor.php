@@ -51,7 +51,7 @@
         </ul>
         <!-- akhir side-nav -->
 
-    <!-- ketentuan -->
+    <!-- 
     <section class="ketentuan scrollspy" id="ketentuan">
           <div class="container">
             <div class="row">
@@ -70,7 +70,7 @@
             </div>
           </div>
         </section>
-    <!-- akhir ketentuan -->
+     -->
 
     <!-- form-formulir -->
     <section class="form_formulir" id="form_formulir">
@@ -80,119 +80,132 @@
                     <form action="adapter_form_visitor.php" method="post">
                         <div class="card-panel">
                             <h5 class="center" style="margin-bottom: 50px;">FORMULIR TAMU & PELAMAR</h5>
+                            <p style="text-align: justify;">Selamat datang di PT Globalindo Intimates Klaten, silahkan mengisi formulir ini sebelum memasuki area perusahaan. Mohon menggunakan HURUF KAPITAL/BESAR. Setelah submit formulir ini, calon kandidat masing-masing akan mendapatkan QR CODE gambar yang diemail sesuai email yang diisi. silahkan cek email H-1 sebelum kedatangan di PT Globalindo Intimates (cek email di kotak masuk atau kotak spam pesan). QR CODE tersebut wajib ditunjukkan saat datang ke PT Globalindo Intimates di Gerbang Security Utama (menggunakan HP tidak perlu di cetak). Terima kasih.</p>
                             <div class="input-field">
-                                <input style="height: 60px;" type="text" name="no_id" require>
-                                <label for="no_id">No. KTP/KITAS/PASSPORT</label>
+                                <input style="height: 60px;" type="text" name="idCard" require>
+                                <label for="idCard">No. KTP/KITAS/PASSPORT</label>
                             </div>
                             <div class="input-field">
-                                <input style="height: 60px;" type="text" name="name" require>
-                                <label for="name">Nama sesuai KTP (Huruf Besar)</label>
+                                <input style="height: 60px;" type="text" name="fullname" require>
+                                <label for="fullname">Nama sesuai KTP (Huruf Besar)</label>
                             </div>
                             <div class="input-field">
-                                <input style="height: 60px;" type="text" name="phone"  require>
-                                <label for="phone">No. Telepon aktif whatsapp</label>
+                                <input style="height: 60px;" type="text" name="wa"  require>
+                                <label for="wa">No. Telepon aktif whatsapp</label>
                             </div>
                             <div class="input-field">
                                 <input style="height: 60px;" type="email" name="email" require class="validate">
                                 <label for="email">Email pribadi & aktif</label>
                             </div>
                             <div class="input-field">
-                                <input style="height: 60px;" type="date" name="visit_date" require>
-                                <label for="visit_date">Tanggal kedatangan</label>
+                                <input style="height: 60px;" type="date" name="visitDate" require>
+                                <label for="visitDate">Tanggal kedatangan</label>
                             </div>
-                            <div class="input-field">
-                                <textarea style="height: 60px;" type="text" name="tujuan" class="materialize-textarea"></textarea>
-                                <label for="tujuan">Keperluan</label>
+                            <div><p>
+                                Keperluan </p>
+                                <label>
+                                    <input type="radio" class="filled-in" name="tujuan" value="Tamu"/>
+                                    <span>Tamu</span>
+                                </label>
+                                <label>
+                                    <input type="radio" class="filled-in" name="tujuan" value="Pelamar Pekerjaan"/>
+                                    <span>Pelamar Pekerjaan</span>
+                                    <br></label>
                             </div>
                         </div>
 
                         <div class="card-panel">
+                        <h5 class="center" style="margin-bottom: 50px;">FORMULIR PENILAIAN RESIKO COVID 19</h5>
+                        <p style="text-align: justify;">Sesuai Keputusan Menteri Kesehatan Nomor HK.01.07/MENKES/328/2020 tentang pengendalian COVID-19 di tempat kerja. Serta demi kesehatan dan keselamatan bersama di area PT Globalindo Intimates, kejujuran anda kami harapkan dalam menjawab pertanyaan dibawah ini, isi dengan pilihan yang sesuai pada kolom jawaban bila sesuai dengan pernyataan yang ada.</p>
+                            
+                        <div>
                             <p>1. Apakah anda sedang/pernah mengalami demam/batuk/pilek/sakit tenggorokan/sesak nafas dalam 14 hari terakhir ?</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb1" value="1"/>
+                                    <input type="radio" class="filled-in" name="test1" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb1" value="0"/>
+                                    <input type="radio" class="filled-in" name="test1" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div>
                             <p>2. Apakah anda sedang / pernah mengalami sakit kepala/nyeri otot/gatal-gatal/infeksi mata/hilang penciuman/sakit perut dalam 14 hari terakhir ?</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb2" value="1"/>
+                                    <input type="radio" class="filled-in" name="test2" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb2" value="0"/>
+                                    <input type="radio" class="filled-in" name="test2" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div >
                             <p>3. Dalam 14 hari terakhir, apakah anda pernah menggunakan transportasi umum? (Bus, Pesawat, Kereta, Kapal dan Moda Transportasi lainnya)</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb3" value="1"/>
+                                    <input type="radio" class="filled-in" name="test3" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb3" value="0"/>
+                                    <input type="radio" class="filled-in" name="test3" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div >
                             <p>4. Dalam 14 hari terakhir, apakah anda pernah mengikuti kegiatan yang dihadiri oleh orang banyak ?</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb4" value="1"/>
+                                    <input type="radio" class="filled-in" name="test4" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb4" value="0"/>
+                                    <input type="radio" class="filled-in" name="test4" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div >
                             <p>5. Dalam 14 hari terakhir, apakah anda pernah melakukan perjalanan keluar kota/negara lain ?</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb5" value="1"/>
+                                    <input type="radio" class="filled-in" name="test5" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb5" value="0"/>
+                                    <input type="radio" class="filled-in" name="test5" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div >
                             <p>6. Dalam 14 hari terakhir, apakah anda pernah keluar rumah / tempat umum ? (pasar, fasilitas kesehatan, kerumunan dan kegiatan lainnya)</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb6" value="1"/>
+                                    <input type="radio" class="filled-in" name="test6" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb6" value="0"/>
+                                    <input type="radio" class="filled-in" name="test6" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div >
                             <p>7. Dalam 14 hari terakhir, apakah anda pernah memiliki riwayat kontak dengan kasus konfirmasi, probable atau suspek COVID-19? <br> - Kontak erat adalah orang yang memiliki riwayat kontak dengan kasus probable atau konfirmasi COVID-19 <br> - Konfirmasi adalah Pasien yang terinfeksi COVID-19 dengan hasil pemeriksaan tes positif melalui pemeriksaan Swab-PCR <br> - Kasus Probable (PDP) adalah kasus suspek dengan ISPA Berat/ARDS***/ meninggal dengan gambaran klinis yang meyakinkan COVID-19 dan belum ada hasil pemeriksaan laboratorium RT-PCR</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb7" value="1"/>
+                                    <input type="radio" class="filled-in" name="test7" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb7" value="0"/>
+                                    <input type="radio" class="filled-in" name="test7" value="0"/>
                                     <span>No</span>
                                 </label>
                         </div>
-                        <div class="card-panel">
+                        <div >
                             <p>8. Menyatakan bahwa saya memberikan pernyataan dengan sejujur-jujurnya. Apabila dikemudian hari pernyataan saya tdak benar/jujur, saya bersedia untuk bertanggung jawab atas apa yang saya nyatakan. Pastikan data yang anda masukkan sudah benar sebelum menyelesaikan form penilaian online ini.</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb8" value="1"/>
+                                    <input type="radio" class="filled-in" name="test8" value="1"/>
                                     <span>Iya</span>
                                 </label>
                                 <label>
-                                    <input type="checkbox" class="filled-in" name="cb8" value="0"/>
+                                    <input type="radio" class="filled-in" name="test8" value="0"/>
                                     <span>No</span>
                                 </label>
+                        </div>
                         </div>
                         
                         <button type="submit" class="btn" name="submit">Kirim</button>
