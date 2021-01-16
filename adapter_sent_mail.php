@@ -63,10 +63,12 @@ $mail->Subject = 'PHPMailer GMail SMTP test';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('tiket.php'));
+//$mail->msgHTML(file_get_contents('tunjukan'));
+$mail->AddAttachment($file_name); 
 
 //Replace the plain text body with one created manually
-$mail->AltBody = 'hy';
+$mail->AltBody = 'hyhy';
+$mail->Body = 'tnju';
 
 
 //send the message, check for errors
@@ -75,3 +77,4 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
+?>
