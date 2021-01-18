@@ -28,7 +28,7 @@ $test8=$_POST["test8"];
 
 //Kondisi apakah berhasil atau tidak
   if ($hasil) {
-	echo "sukses";
+	include "adapter_sent_mail.php";
 	exit;
   }
 else {
