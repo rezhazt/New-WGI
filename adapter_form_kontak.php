@@ -17,8 +17,9 @@ $messageKontak=$_POST["messageKontak"];
 
 //Kondisi apakah berhasil atau tidak
   if ($hasil) {
-	//echo '<script>alert("Terima Kasih telah menghubungi kami")</script>';
-	include "index.php";
+	echo "<script>alert('Data berhasil di tambahkan!');history.go(-1);
+	history.back(self);</script>";
+	include "$contact";
 	exit;
   }
 else {

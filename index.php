@@ -82,7 +82,6 @@
 
       $visiAbout = $dataAbout["visiAbout"];
       $misiAbout = $dataAbout["misiAbout"];
-
     }
   }
   ?>
@@ -117,35 +116,33 @@
     <div class="container" style="height: 600px;">
       <h3 class="light grey-text text-darken-3 center">Our Product</h3>
       <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 5px solid black;">
-      <div class="row">
-        <div class="col m3 s12">
-          <img src="img/product/FILA.jpg" class="responsive-img materialboxed">
-        </div>
-        <div class="col m3 s12">
-          <img src="img/product/nurse uniform.jpg" class="responsive-img materialboxed">
-        </div>
-        <div class="col m3 s12">
-          <img src="img/product/puma hitam.jpg" class="responsive-img materialboxed">
-        </div>
-        <div class="col m3 s12">
-          <img src="img/product/SBW Panty.jpg" class="responsive-img materialboxed">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col m3 s12">
-          <img src="img/product/Spelding Cln.jpg" class="responsive-img materialboxed">
-        </div>
-        <div class="col m3 s12">
-          <img src="img/product/suster.jpg" class="responsive-img materialboxed">
-        </div>
-        <div class="col m3 s12">
-          <img src="img/product/t-shirt.jpg" class="responsive-img materialboxed">
-        </div>
-        <div class="col m3 s12">
-          <img src="img/product/vf 2.jpg" class="responsive-img materialboxed">
-        </div>
-      </div>
+
+      <table>
+        <?php
+        $kolom = 4;
+        $i = 1;
+        $upload_dir = 'img/product/';
+        $sqlProduk = "SELECT * FROM tabel_produk ORDER BY idProduk DESC LIMIT 8";
+        $rslt = mysqli_query($kon, $sqlProduk);
+        while ($data = mysqli_fetch_array($rslt)) {
+          // require_once ('resizeImage.php');
+          // $resize = new ResizeImage($upload_dir . $data["fotoProduk"]);
+          // $resize->resizeTo(100,100,'exact');
+          // $resize->saveImage($upload_dir . $data["fotoProduk"]);
+
+
+          if (($i) % $kolom == 1) {
+            echo '<tr>';
+          }
+          echo '<td style="text-align: center;" width="300px"><img src=' . $upload_dir . $data["fotoProduk"], ' class="responsive-img materialboxed", width="165px"/><b>' . $data['namaProduk'] .'</b></td>';
+          if (($i) % $kolom == 0) {
+            echo '</tr>';
+          }
+          $i++;
+        }
+        ?>
+      </table>
     </div>
   </section>
   <!-- end-product -->
@@ -153,7 +150,26 @@
   <!-- achievement -->
   <div class="slider">
     <ul class="slides">
-      <li>
+
+      <?php
+      $upload_dir = 'img/achievement/';
+      $sqlAchi = "SELECT * FROM tabel_achi ORDER BY idAchi DESC LIMIT 4";
+      $rsltAchi = mysqli_query($kon, $sqlAchi);
+      while ($dataAchi = mysqli_fetch_array($rsltAchi)) {
+
+
+        echo '<li>';
+        echo '<img src=' . $upload_dir . $dataAchi["fotoAchi"], ' style="opacity: 0.5;">';
+        echo '<div class="caption center-align">';
+        echo '<h3>Our Achievement</h3>';
+        echo '<h5 class="light grey-text text-lighten-3">' . $dataAchi['namaAchi'] . '</h5>';
+        echo '</div>';
+        echo '</li>';
+      } ?>
+
+
+
+      <!-- <li>
         <img src="img/achievement/IMG_1048.jpg" style="opacity: 0.5;">
         <div class="caption center-align">
           <h3>Our Achievement</h3>
@@ -180,7 +196,7 @@
           <h3>Our Achievement</h3>
           <h5 class="light grey-text text-lighten-3">Vokasi Certificate</h5>
         </div>
-      </li>
+      </li> -->
   </div>
   <!-- end-achievement -->
 
