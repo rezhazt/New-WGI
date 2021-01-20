@@ -56,58 +56,55 @@
     <!-- event -->
     <section class="event" id="event">
 
-        <php $upload_dir='img/event/' ;
-        $sqlEvent="SELECT * FROM tabel_event" ;
-        $rsltEvent=mysqli_query($kon, $sqlEvent);
-        while ($dataEvent=mysqli_fetch_array($rsltEvent)) { ?>
+        <table>
+        <p></p>
+            <?php
+            include "connection.php";
 
-            <div>
-                <div class="container" style="margin-top: 50px;">
-                    <div class="row">
-                        <div class="col m6 12">
-                            <img class="materialboxed" width="400px" src="img/even/assistance vocational.png">
-                        </div>
-                        <div class="col m6 12">
-                            <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolorum velit autem architecto! Labore, consequuntur numquam. Sunt voluptatibus est similique esse, quia id maxime corporis, laudantium perspiciatis magnam possimus officia.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col m6 12">
-                            <h4>Assisstance Vocational</h4>
-                        </div>
-                        <div class="col m6 12">
-                            <h5 style="text-align: right;">17/5/2018</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            $kolom = 4;
+            $i = 0;
+            $upload_dir = 'img/even/';
+            $sqlEvent = "SELECT * FROM tabel_event ORDER BY idEvent";
+            $rsltEvent = mysqli_query($kon, $sqlEvent);
+            while ($dataEvent = mysqli_fetch_array($rsltEvent)) {
+                // require_once ('resizeImage.php');
+                // $resize = new ResizeImage($upload_dir . $data["fotoProduk"]);
+                // $resize->resizeTo(100,100,'exact');
+                // $resize->saveImage($upload_dir . $data["fotoProduk"]);
+                
+
+                if (($i) % $kolom == 1) {
+                    echo '<tr>';
+                }
+                echo  '<tr><img class="modal-trigger waves-effect" width="200px" style="border-style: solid;
+                border-width: 2px;
+                border-color:black; margin: 20px;" href="#modal1" src=' . $upload_dir . $dataEvent["fotoEvent"].'>';
+                
+                echo  '<div id="modal1" class="modal modal-fixed-footer">';
+                echo  '<div class="modal-content">';
+                echo  '<h3>'. $dataEvent['namaEvent'] .'</h3>';
+                echo  '<h7>'. $dataEvent['tanggalEvent'] .'</h7>';
+                echo  '<p>'. $dataEvent['deskripsiEvent'] .'</p>';
+                echo  '</div>';
+                echo  '<div class="modal-footer">';
+                echo  '<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>';
+                echo  '</div>';
+                echo  '</div>';
 
 
 
 
-            <php } ?>
+
+                if (($i) % $kolom == 0) {
+                    echo '</tr>';
+                }
+                $i++;
+            }
+            ?>
+        </table>
 
 
-                <div id="event">
-                    <div class="container" style="margin-top: 50px;">
-                        <div class="row">
-                            <div class="col m6 12">
-                                <img class="materialboxed" width="400px" src="img/even/assistance vocational.png">
-                            </div>
-                            <div class="col m6 12">
-                                <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolorum velit autem architecto! Labore, consequuntur numquam. Sunt voluptatibus est similique esse, quia id maxime corporis, laudantium perspiciatis magnam possimus officia.</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col m6 12">
-                                <h4>Assisstance Vocational</h4>
-                            </div>
-                            <div class="col m6 12">
-                                <h5 style="text-align: right;">17/5/2018</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
     </section>
     <!-- end event -->
 
@@ -136,6 +133,19 @@
         });
     </script>
     <!-- end materialbox -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function() {
+            $('.modal').modal();
+        });
+    </script>
 
 </body>
 

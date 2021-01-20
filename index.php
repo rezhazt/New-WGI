@@ -70,12 +70,13 @@
   <?php
 
   include "connection.php";
-  $queryAbout = mysqli_query($kon, "SELECT * FROM tabel_about ORDER BY idAbout DESC LIMIT 1");
+  
   ?>
 
 
   <!-- about -->
   <?php
+  $queryAbout = mysqli_query($kon, "SELECT * FROM tabel_about ORDER BY idAbout DESC LIMIT 1");
   if (mysqli_num_rows($queryAbout) > 0) {
 
     while ($dataAbout = mysqli_fetch_array($queryAbout)) {
@@ -135,7 +136,7 @@
           if (($i) % $kolom == 1) {
             echo '<tr>';
           }
-          echo '<td style="text-align: center;" width="300px"><img src=' . $upload_dir . $data["fotoProduk"], ' class="responsive-img materialboxed", width="165px"/><b>' . $data['namaProduk'] .'</b></td>';
+          echo '<td style="text-align: justify;" width="300px"><img src=' . $upload_dir . $data["fotoProduk"], ' class="responsive-img materialboxed", width="165px"/><b>' . $data['namaProduk'] .'</b></td>';
           if (($i) % $kolom == 0) {
             echo '</tr>';
           }
