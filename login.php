@@ -42,7 +42,7 @@
                             <div class="input-field">
                                 <input type="password" name="password" require>
                                 <label for="password">Password</label>
-                            </div>
+                            </div >
                             <button type="submit" class="btn center-align">Login</button>
                             <button type="submit" class="btn center-align red"><a href="index.php" style="color:white">Kembali</a></button>
                         </div>
